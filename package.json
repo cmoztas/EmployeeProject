@@ -4,7 +4,6 @@
   "description": "This is a employee project with using webpack,babel,webpack-dev-server and Es6 Modules",
   "main": "./src/index.js",
   "scripts": {
-    "test": "This is a test",
     "start": "webpack-dev-server --output-public-path=/bundles/  --mode development --open --hot",
     "build": "webpack --progress"
   },
