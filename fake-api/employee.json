@@ -11,12 +11,6 @@
       "department": "Development",
       "salary": 4000,
       "id": 2
-    },
-    {
-      "name": "Ece The Prettie",
-      "department": "Child",
-      "salary": 99999999,
-      "id": 3
     }
   ]
 }
