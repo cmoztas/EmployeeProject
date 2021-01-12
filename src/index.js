@@ -68,7 +68,7 @@ function deleteEmployee(targetEmployee) {
     .catch(err => console.log(err));
 }
 
-function updateEmployeeController(targetEmployee) {
+function updateEmployeeController(targetEmployee) { // tr element geldi
     ui.toggleUpdateButton(targetEmployee);
 
     if (updateState === null) {
@@ -82,8 +82,6 @@ function updateEmployeeController(targetEmployee) {
 }
 
 function updateEmployee(e) {
-    e.preventDefault();
-
     if (updateState !== null) {
         const data = {
             name: nameInput.value.trim(),
@@ -92,12 +90,11 @@ function updateEmployee(e) {
         }
 
         req.put(updateState.updateId, data)
-        .then(updatedEmployee => ui.updateEmployee(updatedEmployee, updateState.updateParent))
+        .then(updatedEmployee => {
+            ui.updateEmployee(updatedEmployee, updateState.updateParent);
+            ui.toggleUpdateButton();
+            updateState = null;
+        })
         .catch(err => console.log(err));
-
-        console.log(updateState.updateParent);
-        updateState = null;
     }
-
-    ui.toggleUpdateButton();
 }
